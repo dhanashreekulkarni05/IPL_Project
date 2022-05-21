@@ -5,11 +5,11 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ReadMatches {
-    public static void main(String[] args)
-    {
+    List<List<String>> data = new ArrayList<>();
+    public void reader1(){
+
         try(BufferedReader br = new BufferedReader(new FileReader("matches.csv")))
         {
-            List<List<String>> data = new ArrayList<>();
 //            BufferedReader br = new BufferedReader(new FileReader("matches.csv"));
 
             //Reading until we run out of lines

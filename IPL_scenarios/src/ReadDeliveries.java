@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ReadDeliveries {
-    public static void main(String[] args)
+    public void reader2()
     {
         try(BufferedReader br = new BufferedReader(new FileReader("deliveries.csv")))
         {
@@ -24,11 +24,17 @@ public class ReadDeliveries {
 
 //            //printing the fetched data
 //            for(List<String> list : data)
-//            {
+           {
 //                for(String s : list)
 //                    System.out.print(s + " ");
-//                System.out.println();
-//            }
+//                    System.out.println();
+               int c=0;
+               for (int i=0;i<data.size();i++){
+                   System.out.println(data.get(1));
+                   c++;
+               }
+               System.out.println(c);
+      }
         }
         catch(Exception e)
         {
