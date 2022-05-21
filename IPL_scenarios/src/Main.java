@@ -8,6 +8,12 @@ public class Main {
         o3.prob1();
         //System.out.println(o3);
         Task2 o4 = new Task2();
-        o3.prob1();
+        o4.prob2();
+        Task3 o5 = new Task3();
+        o5.prob3();
+        Task4 o6 = new Task4();
+        o6.prob4();
+        CustomTask o7 = new CustomTask();
+        o7.prob5();
     }
 }
