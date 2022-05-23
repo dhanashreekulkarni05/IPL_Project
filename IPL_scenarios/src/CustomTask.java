@@ -1,30 +1,34 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.*;
 
 public class CustomTask {
-    Map<String, Integer> map3 = new HashMap<>();
-    public void prob5(){
+    public static void prob5() {
 
-//Toss winner for the year 2017.
-            Set<String> year = new HashSet<String>();
-                Map<String, Integer> map = new HashMap<>();
-                ReadMatches obj = new ReadMatches();
-                ListIterator<List<String>> t1 = obj.data1.listIterator();
-                while(t1.hasNext()){
-//            List<String> y = obj.data1.get(1);
-
-                    String y = (String) obj.data1.get(6);
-                    if (y[1] == 2017)
-                        if (t1.next() != null) {
-                            if (map.containsKey(y)) {
-                                map.put(y, map.get(y) + 1);
-                            } else map.put(y, 1);
-                        }
-                map.forEach((k, v) -> {
-                    System.out.println(k+":"+v);
-                });
+        try (BufferedReader br = new BufferedReader(new FileReader("matches.csv"))) {
+            String str = br.readLine();
+            while ((str = br.readLine()) != null)       //Reading until we run out of lines
+            {
+                String[] current = str.split(",");      //creating a string to splitting lines
+                ReadMatches.rm.add(Arrays.asList(current));                       //passing the string to arraylist
             }
+        } catch (Exception e) {
+            System.out.print("oh my god");
         }
 
+
+        HashMap<String, Integer> matchInYear = new HashMap<>();
+        for (int i = 1; i < ReadMatches.rm.size(); i++) {
+            ArrayList city = new ArrayList((Collection) ReadMatches.rm.get(i));
+            //System.out.println(data.get(2).getClass());
+            String year = (String) city.get(2);
+            if (matchInYear.containsKey(year)) {
+                matchInYear.put(year, matchInYear.get(year) + 1);
+            } else {
+                matchInYear.put(year, 1);
+            }
+        }
+        System.out.println(matchInYear);
 
     }
 }

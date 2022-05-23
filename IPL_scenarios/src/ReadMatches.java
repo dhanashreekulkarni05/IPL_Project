@@ -1,27 +1,22 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ReadMatches {
-    ArrayList data1 = new ArrayList<>();
-    public ArrayList reader1(){
-        try(BufferedReader br = new BufferedReader(new FileReader("matches.csv")))
-        {
-            //Reading until we run out of lines
-            String str="";
-            br.readLine();
-            while((str = br.readLine()) != null)
-            {
-                String[] current = str.split(",");//splitting lines
+    static ArrayList rm = new ArrayList<>();
 
-                data1.add(current);
-                str = br.readLine();
+    public static ArrayList matchesReader() {
+        try (BufferedReader br = new BufferedReader(new FileReader("matches.csv"))) {
+            String str = br.readLine();
+            while ((str = br.readLine()) != null)       //Reading until we run out of lines
+            {
+                String[] current = str.split(",");      //creating a string to splitting lines
+                rm.add(Arrays.asList(current));                       //passing the string to arraylist
             }
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             System.out.print(e);
         }
-        return null;
+        return rm;
     }
 }
