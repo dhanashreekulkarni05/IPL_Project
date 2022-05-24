@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/IPL.iml" filepath="$PROJECT_DIR$/.idea/IPL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IPL_Projrct/IPL_Projrct.iml" filepath="$PROJECT_DIR$/IPL_Projrct/IPL_Projrct.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IPL_scenarios/IPL_scenarios.iml" filepath="$PROJECT_DIR$/IPL_scenarios/IPL_scenarios.iml" />
+    </modules>
+  </component>
+</project>
